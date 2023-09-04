@@ -125,7 +125,7 @@ Example file is in the project folder called: topHorizonData");
             if (Reservoir.BaseHorizonData == null)
             {
                 _dialogService.ShowMessage(@"Load base horizon data first!
-Example file is in the project folder called: topHorizonData");
+Example file is in the project folder called: baseHorizonData");
                 return -1;
             }
             if (Reservoir.SelectedUnit == null)
