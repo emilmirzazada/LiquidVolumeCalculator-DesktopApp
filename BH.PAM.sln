@@ -5,7 +5,9 @@ VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BH.PAM", "BH.PAM\BH.PAM.csproj", "{DE84612E-1CEB-4302-B03B-5905D899E8A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BH.PAM.Data", "BH.PAM.Data\BH.PAM.Data.csproj", "{C110CBA6-F530-4487-B8A3-06B14402AEE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BH.PAM.Data", "BH.PAM.Data\BH.PAM.Data.csproj", "{C110CBA6-F530-4487-B8A3-06B14402AEE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BH.PAM.Tests", "BH.PAM.Tests\BH.PAM.Tests.csproj", "{DF5F8CD9-8E27-4305-80F5-B18D4220B5FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C110CBA6-F530-4487-B8A3-06B14402AEE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C110CBA6-F530-4487-B8A3-06B14402AEE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C110CBA6-F530-4487-B8A3-06B14402AEE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF5F8CD9-8E27-4305-80F5-B18D4220B5FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF5F8CD9-8E27-4305-80F5-B18D4220B5FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF5F8CD9-8E27-4305-80F5-B18D4220B5FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF5F8CD9-8E27-4305-80F5-B18D4220B5FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

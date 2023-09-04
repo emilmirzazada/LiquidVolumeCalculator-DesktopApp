@@ -159,7 +159,8 @@ Example file is in the project folder called: topHorizonData");
                     else
                         height = topDepth - Reservoir.FluidContactDepth;
 
-                    volume += Reservoir.GridCellSizeX * Reservoir.GridCellSizeY * height;
+                    if (height > 0)
+                        volume += Reservoir.GridCellSizeX * Reservoir.GridCellSizeY * height;
                 }
             }
 
