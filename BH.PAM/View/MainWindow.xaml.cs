@@ -58,6 +58,7 @@ namespace BH.PAM
                 _viewModel.ReservoirHandler.VolumeType = VolumeType.Barrels;
                 _viewModel.SelectedUnitHandler = VolumeType.Barrels.ToString();
             }
+            _viewModel.CalculateCommand.Execute(null);
             DataContext = _viewModel;
         }
 
