@@ -24,8 +24,8 @@ namespace BH.PAM.Tests
                 .Returns(GetRandomNumberInRange(rand, 6000, 7000));
 
             var viewModel = new MainViewModel(unitConversionServiceMock.Object, dialogServiceMock.Object);
-            viewModel.ReservoirHandler.TopHorizonData = dataAccessMock.GetTopHorizonData(Path.Combine(Directory.GetCurrentDirectory(), "topHorizonData.txt"));
-            viewModel.ReservoirHandler.BaseHorizonData = dataAccessMock.GetTopHorizonData(Path.Combine(Directory.GetCurrentDirectory(), "baseHorizonData.txt"));
+            viewModel.ReservoirHandler.TopHorizonData = dataAccessMock.GetHorizonData(Path.Combine(Directory.GetCurrentDirectory(), "topHorizonData.txt"));
+            viewModel.ReservoirHandler.BaseHorizonData = dataAccessMock.GetHorizonData(Path.Combine(Directory.GetCurrentDirectory(), "baseHorizonData.txt"));
             viewModel.ReservoirHandler.SelectedUnit = VolumeType.Meters.ToString();
 
             viewModel.CalculateCommand.Execute(null);

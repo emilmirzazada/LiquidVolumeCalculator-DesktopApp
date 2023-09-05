@@ -19,7 +19,6 @@ public partial class App : Application
             .ConfigureServices((hostContext, services) =>
             {
                 services.AddSingleton<MainWindow>();
-                services.AddFormFactory<ChildForm>();
                 services.RegisterServices();
             })
             .Build();

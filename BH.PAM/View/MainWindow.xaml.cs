@@ -17,22 +17,18 @@ namespace BH.PAM
     public partial class MainWindow : Window
     {
         private readonly IDataAccess _dataAccess;
-        private readonly IAbstractFactory<ChildForm> _factory;
         private readonly IDialogService _dialogService;
-        private readonly IUnitConversionService _unitConversionService;
         private readonly ILogger<MainWindow> _logger;
         private MainViewModel _viewModel;
 
         public MainWindow(
             IDataAccess dataAccess,
-            IAbstractFactory<ChildForm> factory,
             IUnitConversionService unitConversionService,
             IDialogService dialogService,
             ILoggerFactory loggerFactory)
         {
             _logger = loggerFactory.CreateLogger<MainWindow>();
             InitializeComponent();
-            _factory = factory;
             _dialogService = dialogService;
             _dataAccess = dataAccess;
             _viewModel = new MainViewModel(unitConversionService, dialogService);
@@ -66,7 +62,7 @@ namespace BH.PAM
         {
             _dialogService.OpenFileDialog();
 
-            _viewModel.ReservoirHandler.TopHorizonData = _dataAccess.GetTopHorizonData(_dialogService.FilePath);
+            _viewModel.ReservoirHandler.TopHorizonData = _dataAccess.GetHorizonData(_dialogService.FilePath);
             DataContext = _viewModel;
             if (_viewModel.ReservoirHandler.TopHorizonData != null)
                 _dialogService.ShowMessage("Success");
@@ -78,23 +74,12 @@ namespace BH.PAM
         {
             _dialogService.OpenFileDialog();
 
-            _viewModel.ReservoirHandler.BaseHorizonData = _dataAccess.GetTopHorizonData(_dialogService.FilePath);
+            _viewModel.ReservoirHandler.BaseHorizonData = _dataAccess.GetHorizonData(_dialogService.FilePath);
             DataContext = _viewModel;
             if (_viewModel.ReservoirHandler.BaseHorizonData != null)
                 _dialogService.ShowMessage("Success");
             else
                 _dialogService.ShowMessage("Failed to load and parse data.");
-        }
-
-        private static void Writetofile(string text)
-        {
-            string folder = @"C:\Users\emild\Desktop\TestWpfApp";
-            string fileName = @"\consoleoutput.txt";
-            string fullPath = folder + fileName;
-            using (StreamWriter writer = File.AppendText(fullPath))
-            {
-                writer.Write(text);
-            }
         }
     }
 }

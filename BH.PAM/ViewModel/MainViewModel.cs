@@ -2,6 +2,7 @@
 using BH.PAM.Model;
 using BH.PAM.Model.Enums;
 using BH.PAM.Services.Interfaces;
+using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
@@ -141,7 +142,7 @@ Example file is in the project folder called: baseHorizonData");
             if (ValidateData() == -1)
                 return;
             double volume = 0.0;
-            double height = 0;
+            double height;
 
             for (int i = 0; i < Reservoir.DimensionY; i++)
             {
@@ -164,10 +165,10 @@ Example file is in the project folder called: baseHorizonData");
                 }
             }
 
-            if (Reservoir.VolumeType == VolumeType.Meters)
-                VolumeHandler = volume;
-            else
-                VolumeHandler = _unitConversionService.ConvertUnits(volume, VolumeType.Meters, Reservoir.VolumeType);
+            if (Reservoir.VolumeType != VolumeType.Meters)
+                volume = _unitConversionService.ConvertUnits(volume, VolumeType.Meters, Reservoir.VolumeType);
+
+            VolumeHandler = Math.Round(volume, 2, MidpointRounding.AwayFromZero);
         }
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

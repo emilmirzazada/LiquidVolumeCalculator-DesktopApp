@@ -2,6 +2,6 @@
 {
     public interface IDataAccess
     {
-        double[,] GetTopHorizonData(string filePath);
+        double[,] GetHorizonData(string filePath);
     }
 }

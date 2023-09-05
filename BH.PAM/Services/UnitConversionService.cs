@@ -14,9 +14,9 @@ namespace BH.PAM.Services
         {
             double[][] factor =
                 {
-                new double[] { 1, 3.28084, 6.2898107704},
-                new double[] { 0.3048, 1, 0.178108},
-                new double[] { 0.16, 5.61, 1}
+                new double[] { 1, 3.28084, 6.2898107704}, //meter
+                new double[] { 0.3048, 1, 0.178108}, //feet
+                new double[] { 0.16, 5.61, 1} //barrel
             };
             return units * factor[(int)from][(int)to];
         }

@@ -2,22 +2,10 @@
 
 public class DataAccess : IDataAccess
 {
-    private static void Writetofile(string text)
-    {
-        string folder = @"C:\Users\emild\Desktop\BH.PAM";
-        string fileName = @"\consoleoutput.txt";
-        string fullPath = folder + fileName;
-        using (StreamWriter writer = File.AppendText(fullPath))
-        {
-            writer.Write(text);
-        }
-    }
-
-    public double[,] GetTopHorizonData(string filePath)
+    public double[,] GetHorizonData(string filePath)
     {
         if (!File.Exists(filePath))
         {
-            Console.WriteLine("File not found: " + filePath);
             return null;
         }
 
